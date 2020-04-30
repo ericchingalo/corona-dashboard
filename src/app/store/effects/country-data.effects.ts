@@ -11,6 +11,7 @@ import {
   loadCountryDataFail,
 } from '../actions';
 import { CountryData } from '../../core/models/country-data.model';
+import { countryDataSanitizer } from '../../core/helpers/country-data-sanitizer.helper';
 
 @Injectable()
 export class CountryDataEffects {
@@ -25,7 +26,9 @@ export class CountryDataEffects {
       ofType(loadCountryData),
       switchMap(() =>
         this.covidService.getCountryData().pipe(
-          map((data: CountryData[]) => loadCountryDataSuccess({ data })),
+          map((data: CountryData[]) =>
+            loadCountryDataSuccess({ data: countryDataSanitizer(data) })
+          ),
           catchError((error: any) => of(loadCountryDataFail({ error })))
         )
       )
