@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { reducers, metaReducers } from './store/reducers';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +18,8 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    StoreModule.forRoot(reducers, { metaReducers }),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
