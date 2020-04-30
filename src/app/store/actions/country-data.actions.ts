@@ -5,7 +5,7 @@ export const loadCountryData = createAction('[Country] Load Country data');
 
 export const loadCountryDataSuccess = createAction(
   '[Country] Load Country data Success',
-  props<{ data: CountryData }>()
+  props<{ data: CountryData[] }>()
 );
 
 export const loadCountryDataFail = createAction(

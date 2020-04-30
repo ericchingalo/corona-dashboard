@@ -17,7 +17,7 @@ export const countryDataAdapter = createEntityAdapter<CountryData>({
   selectId: selectCountryDataByDate,
 });
 
-export const initialAdminsState = countryDataAdapter.getInitialState({
+export const initialCountryDataState = countryDataAdapter.getInitialState({
   ...initialBaseState,
 });
 

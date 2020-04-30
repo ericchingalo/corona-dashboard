@@ -5,7 +5,7 @@ export interface WorldDataState extends BaseState {
   worldData: WorldData;
 }
 
-export const initialCurrentUserState: WorldDataState = {
+export const initialWorldDataState: WorldDataState = {
   ...initialBaseState,
   worldData: null,
 };
