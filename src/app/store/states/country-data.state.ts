@@ -4,8 +4,8 @@ import { CountryData } from '../../core/models/country-data.model';
 
 export interface CountryDataState extends BaseState, EntityState<CountryData> {}
 
-export function selectCountryDataByDate(data: CountryData): string {
-  return data.date;
+export function selectCountryDataByID(data: CountryData): string {
+  return data.id;
 }
 
 export function sortDataByDate(data1: CountryData, data2: CountryData): number {
@@ -14,7 +14,7 @@ export function sortDataByDate(data1: CountryData, data2: CountryData): number {
 
 export const countryDataAdapter = createEntityAdapter<CountryData>({
   sortComparer: sortDataByDate,
-  selectId: selectCountryDataByDate,
+  selectId: selectCountryDataByID,
 });
 
 export const initialCountryDataState = countryDataAdapter.getInitialState({
