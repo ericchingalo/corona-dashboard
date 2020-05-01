@@ -10,6 +10,9 @@ import { ChartService } from '../../services/chart.service';
 })
 export class CountryDataChartsComponent implements OnInit {
   @Input() countryData: CountryData[];
+  lineChart = 'assets/icons/line.png';
+  columnChart = 'assets/icons/column.png';
+  areaChart = 'assets/icons/area.png';
 
   constructor(private chartService: ChartService) {}
 

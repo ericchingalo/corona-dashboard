@@ -1,5 +1,10 @@
 <mat-card>
   <mat-card-content>
+    <div class="icons">
+      <img [src]="lineChart" alt="linechart" (click)="getLineChart()" />
+      <img [src]="columnChart" alt="columnchart" (click)="getColumnChart()" />
+      <img [src]="areaChart" alt="areachart" (click)="getAreaChart()" />
+    </div>
     <figure class="highcharts-figure">
       <div
         id="highchart-container"
