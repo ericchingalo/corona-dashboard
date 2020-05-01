@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { reducers, metaReducers } from './store/reducers';
 import { effects } from './store/effects';
+import { MaterialModule } from './core/material/material.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { effects } from './store/effects';
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
+    MaterialModule,
     HttpClientModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot(effects),
