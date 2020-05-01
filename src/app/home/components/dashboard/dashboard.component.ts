@@ -22,6 +22,7 @@ import {
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
+  todaysDate: Date;
   worldData$: Observable<WorldData>;
   latestCountryData$: Observable<CountryData>;
   allCountryData$: Observable<CountryData[]>;
@@ -31,6 +32,7 @@ export class DashboardComponent implements OnInit {
   constructor(private store: Store<State>, private router: Router) {}
 
   ngOnInit() {
+    this.todaysDate = new Date();
     this.worldData$ = this.store.select(getWorldData);
     this.countryDataLoaded$ = this.store.select(getCountryDataLoaded);
     this.loadedWorldData$ = this.store.select(getWorldDataLoaded);
