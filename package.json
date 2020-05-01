@@ -34,6 +34,7 @@
     "highcharts": "^8.0.3",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
+    "ngx-skeleton-loader": "^1.2.7",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

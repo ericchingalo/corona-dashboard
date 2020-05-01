@@ -1,14 +1,15 @@
+<mat-toolbar>
+  <img
+    src="favicon.ico"
+    style="height: 5vh; width: auto; border-radius: 50%; margin-left: 1vw;"
+  />
+  &nbsp; Tanzania covid-19 dashboard</mat-toolbar
+>
+
 <div
   class="dashboard-container"
   *ngIf="(loadedWorldData$ | async) && (countryDataLoaded$ | async)"
 >
-  <mat-toolbar>
-    <img
-      src="favicon.ico"
-      style="height: 5vh; width: auto; border-radius: 50%; margin-left: 1vw;"
-    />
-    &nbsp; Tanzania covid-19 dashboard</mat-toolbar
-  >
   <div
     class="quick-stats"
     fxLayout="row wrap"
@@ -100,3 +101,7 @@
     </div>
   </div>
 </div>
+
+<app-dashboard-loader
+  *ngIf="!((loadedWorldData$ | async) && (countryDataLoaded$ | async))"
+></app-dashboard-loader>
