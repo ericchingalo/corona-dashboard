@@ -1,4 +1,7 @@
-<div class="dashboard-container" *ngIf="loadedWorldData$ | async">
+<div
+  class="dashboard-container"
+  *ngIf="(loadedWorldData$ | async) && (countryDataLoaded$ | async)"
+>
   <div
     class="quick-stats"
     fxLayout="row wrap"
@@ -40,35 +43,36 @@
     </mat-card>
 
     <mat-card
-      class="world-data"
+      class="country-data"
       fxFlex="calc(33%-25px)"
       fxFlex.sm="calc(50%-25px)"
     >
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>Tanzania Statistics</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <div>
           <i class="fa fa-ambulance"></i> Confirmed cases -
-          {{ (worldData$ | async).totalConfirmed }}
+          {{ (latestCountryData$ | async).confirmed }}
         </div>
         <div>
           <i class="fa fa-list-alt"></i> Deaths -
-          {{ (worldData$ | async).totalDeaths }}
+          {{ (latestCountryData$ | async).deaths }}
         </div>
         <div>
           <i class="fa fa-heartbeat"></i> Recovered -
-          {{ (worldData$ | async).totalRecovered }}
+          {{ (latestCountryData$ | async).recovered }}
         </div>
         <div>
           <i class="fa fa-stethoscope"></i>
           Active Cases -
-          {{
-            (worldData$ | async).totalConfirmed -
-              ((worldData$ | async).totalRecovered +
-                (worldData$ | async).totalDeaths)
-          }}
+          {{ (latestCountryData$ | async).active }}
+        </div>
+
+        <div class="float-right">
+          <small
+            >Last updated: {{ (latestCountryData$ | async).date | date }}</small
+          >
         </div>
       </mat-card-content>
     </mat-card>
