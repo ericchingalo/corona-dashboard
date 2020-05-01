@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { WorldData } from '../../../core/models/world-data.model';
 import { State } from '../../../store/reducers';
 import { CountryData } from '../../../core/models/country-data.model';
+import { getCountryData } from '../../../store/selectors/country-data.selector';
 import {
   getLatestCountryData,
   getCountryDataLoaded,
@@ -22,16 +23,26 @@ import {
 })
 export class DashboardComponent implements OnInit {
   worldData$: Observable<WorldData>;
-  loadedWorldData$: Observable<boolean>;
   latestCountryData$: Observable<CountryData>;
+  allCountryData$: Observable<CountryData[]>;
   countryDataLoaded$: Observable<boolean>;
+  loadedWorldData$: Observable<boolean>;
 
   constructor(private store: Store<State>, private router: Router) {}
 
   ngOnInit() {
     this.worldData$ = this.store.select(getWorldData);
+    this.countryDataLoaded$ = this.store.select(getCountryDataLoaded);
     this.loadedWorldData$ = this.store.select(getWorldDataLoaded);
     this.latestCountryData$ = this.store.select(getLatestCountryData);
-    this.countryDataLoaded$ = this.store.select(getCountryDataLoaded);
+    this.allCountryData$ = this.store.select(getCountryData);
+  }
+
+  openCountryHistory(e) {
+    if (e) {
+      e.stopPropagation();
+    }
+
+    this.router.navigate(['history']);
   }
 }

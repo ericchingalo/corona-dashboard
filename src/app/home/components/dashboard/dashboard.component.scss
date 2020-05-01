@@ -23,6 +23,10 @@
   color: rgb(192, 6, 6);
 }
 
+small {
+  color: grey;
+}
+
 @media only screen and (max-width: 960px) {
   mat-card {
     width: 90vw;

@@ -77,4 +77,16 @@
       </mat-card-content>
     </mat-card>
   </div>
+
+  <div class="country-analysis">
+    <app-country-data-charts
+      [countryData]="allCountryData$ | async"
+    ></app-country-data-charts>
+
+    <div class="float-right">
+      <button mat-raised-button (click)="openCountryHistory($event)">
+        View History
+      </button>
+    </div>
+  </div>
 </div>
