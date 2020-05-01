@@ -1,1 +1,57 @@
-<p>dashboard works!</p>
+<div class="dashboard-container" *ngIf="loadedWorldData$ | async">
+  <div
+    class="quick-stats"
+    fxLayout="row wrap"
+    fxLayout.xs="column"
+    fxLayoutAlign="space-around center"
+    fxLayoutGap="25px"
+  >
+    <mat-card
+      class="world-data"
+      fxFlex="calc(33%-25px)"
+      fxFlex.sm="calc(50%-25px)"
+    >
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Word Statistics</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div>Confirmed cases - {{ (worldData$ | async).totalConfirmed }}</div>
+        <div>Deaths - {{ (worldData$ | async).totalDeaths }}</div>
+        <div>Recovered - {{ (worldData$ | async).totalRecovered }}</div>
+        <div>
+          Active Cases -
+          {{
+            (worldData$ | async).totalConfirmed -
+              ((worldData$ | async).totalRecovered +
+                (worldData$ | async).totalDeaths)
+          }}
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card
+      class="world-data"
+      fxFlex="calc(33%-25px)"
+      fxFlex.sm="calc(50%-25px)"
+    >
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Word Statistics</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div>Confirmed cases - {{ (worldData$ | async).totalConfirmed }}</div>
+        <div>Deaths - {{ (worldData$ | async).totalDeaths }}</div>
+        <div>Recovered - {{ (worldData$ | async).totalRecovered }}</div>
+        <div>
+          Active Cases -
+          {{
+            (worldData$ | async).totalConfirmed -
+              ((worldData$ | async).totalRecovered +
+                (worldData$ | async).totalDeaths)
+          }}
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
