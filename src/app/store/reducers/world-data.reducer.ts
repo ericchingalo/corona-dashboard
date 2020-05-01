@@ -19,7 +19,7 @@ export const reducer = createReducer(
   on(loadWorldDataSuccess, (state, { data }) => ({
     ...state,
     ...loadedBaseState,
-    currentUser: data,
+    worldData: data,
   })),
   on(loadWorldDataFail, (state, { error }) => ({
     ...state,
