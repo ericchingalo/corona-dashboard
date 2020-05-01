@@ -13,14 +13,23 @@
     >
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Word Statistics</mat-card-title>
+        <mat-card-title>World Statistics</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <div>Confirmed cases - {{ (worldData$ | async).totalConfirmed }}</div>
-        <div>Deaths - {{ (worldData$ | async).totalDeaths }}</div>
-        <div>Recovered - {{ (worldData$ | async).totalRecovered }}</div>
         <div>
-          Active Cases -
+          <i class="fa fa-ambulance"></i> Confirmed cases -
+          {{ (worldData$ | async).totalConfirmed }}
+        </div>
+        <div>
+          <i class="fa fa-list-alt"></i> Deaths -
+          {{ (worldData$ | async).totalDeaths }}
+        </div>
+        <div>
+          <i class="fa fa-heartbeat"></i> Recovered -
+          {{ (worldData$ | async).totalRecovered }}
+        </div>
+        <div>
+          <i class="fa fa-stethoscope"></i> Active Cases -
           {{
             (worldData$ | async).totalConfirmed -
               ((worldData$ | async).totalRecovered +
@@ -37,13 +46,23 @@
     >
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Word Statistics</mat-card-title>
+        <mat-card-title>Tanzania Statistics</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <div>Confirmed cases - {{ (worldData$ | async).totalConfirmed }}</div>
-        <div>Deaths - {{ (worldData$ | async).totalDeaths }}</div>
-        <div>Recovered - {{ (worldData$ | async).totalRecovered }}</div>
         <div>
+          <i class="fa fa-ambulance"></i> Confirmed cases -
+          {{ (worldData$ | async).totalConfirmed }}
+        </div>
+        <div>
+          <i class="fa fa-list-alt"></i> Deaths -
+          {{ (worldData$ | async).totalDeaths }}
+        </div>
+        <div>
+          <i class="fa fa-heartbeat"></i> Recovered -
+          {{ (worldData$ | async).totalRecovered }}
+        </div>
+        <div>
+          <i class="fa fa-stethoscope"></i>
           Active Cases -
           {{
             (worldData$ | async).totalConfirmed -
