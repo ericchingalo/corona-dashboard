@@ -27,6 +27,10 @@ small {
   color: grey;
 }
 
+button {
+  margin: 1vw 1vh;
+}
+
 @media only screen and (max-width: 960px) {
   mat-card {
     width: 90vw;
