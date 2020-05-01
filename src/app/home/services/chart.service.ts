@@ -4,6 +4,8 @@ import { CountryData } from '../../core/models/country-data.model';
 import { getCountryDataPeriods } from '../../core/helpers/get-country-data-periods.helper';
 import {
   getConfirmedData,
+  getDeathData,
+  getRecoveredData,
   getNewCasesData,
 } from '../../core/helpers/get-series-data.helper';
 
@@ -20,7 +22,7 @@ export class ChartService {
         zoomType: 'xy',
       },
       title: {
-        text: 'Covid-19 confirmed cases in Tanzania',
+        text: 'Covid-19 summary in Tanzania',
       },
       subtitle: {
         text: 'Source: https://covid19api.com',
@@ -70,8 +72,18 @@ export class ChartService {
       series: [
         {
           type: undefined,
-          name: 'covid-19 confirmed cases',
+          name: 'Confirmed',
           data: getConfirmedData(data),
+        },
+        {
+          type: undefined,
+          name: 'Recovered',
+          data: getRecoveredData(data),
+        },
+        {
+          type: undefined,
+          name: 'Deaths',
+          data: getDeathData(data),
         },
       ],
     });
@@ -141,5 +153,72 @@ export class ChartService {
     });
   }
 
-  // generateLineChart() {}
+  generateLineChart(chart: string, data: CountryData[]) {
+    return HighCharts.chart(chart, {
+      chart: {
+        type: 'line',
+        zoomType: 'xy',
+      },
+      title: {
+        text: 'Covid-19 confirmed cases in Tanzania ',
+      },
+      subtitle: {
+        text: 'Source: https://covid19api.com',
+      },
+      legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle',
+      },
+      xAxis: {
+        categories: getCountryDataPeriods(data),
+        tickmarkPlacement: 'on',
+        title: {
+          text: 'Dates',
+        },
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: 'Number of people',
+          align: 'high',
+        },
+      },
+      tooltip: {
+        valueSuffix: ' people',
+      },
+      plotOptions: {
+        series: {
+          label: {
+            connectorAllowed: false,
+          },
+          pointStart: 2010,
+        },
+      },
+      responsive: {
+        rules: [
+          {
+            condition: {
+              maxWidth: 500,
+            },
+            chartOptions: {
+              legend: {
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'bottom',
+              },
+            },
+          },
+        ],
+      },
+
+      series: [
+        {
+          type: undefined,
+          name: 'covid-19 confirmed cases',
+          data: getConfirmedData(data),
+        },
+      ],
+    });
+  }
 }

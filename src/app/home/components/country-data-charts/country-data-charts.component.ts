@@ -15,7 +15,7 @@ export class CountryDataChartsComponent implements OnInit {
 
   ngOnInit() {
     this.countryData = sanitizeDataByDate(this.countryData);
-    this.getColumnChart();
+    this.getAreaChart();
   }
 
   getAreaChart() {
@@ -27,6 +27,13 @@ export class CountryDataChartsComponent implements OnInit {
 
   getColumnChart() {
     this.chartService.generateColumnChart(
+      'highchart-container',
+      this.countryData
+    );
+  }
+
+  getLineChart() {
+    this.chartService.generateLineChart(
       'highchart-container',
       this.countryData
     );
