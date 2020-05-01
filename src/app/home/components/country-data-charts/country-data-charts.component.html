@@ -1,6 +1,15 @@
-<p>country-data-charts works!</p>
 <mat-card>
   <mat-card-content>
-    {{ countryData | json }}
+    <figure class="highcharts-figure">
+      <div
+        id="highchart-container"
+        style="
+          min-width: 310px;
+          max-width: 800px;
+          height: 400px;
+          margin: 0 auto;
+        "
+      ></div>
+    </figure>
   </mat-card-content>
 </mat-card>
