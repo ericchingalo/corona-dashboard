@@ -11,6 +11,7 @@ import {
 } from '../actions/world-data.actions';
 import { loadData } from '../actions/app.actions';
 import { loadWorldDataSuccess } from '../actions/world-data.actions';
+import { worldDataSanitizer } from '../../core/helpers/world-data-sanitizer.helper';
 
 @Injectable()
 export class WorldDataEffects {
@@ -25,7 +26,9 @@ export class WorldDataEffects {
       ofType(loadWorldData),
       switchMap(() =>
         this.covidService.getWorldData().pipe(
-          map((data: WorldData) => loadWorldDataSuccess({ data })),
+          map((data: WorldData) =>
+            loadWorldDataSuccess({ data: worldDataSanitizer(data) })
+          ),
           catchError((error: any) => of(loadWorldDataFail(error)))
         )
       )
