@@ -1,30 +1,34 @@
-<h3>Tanzania covid-19 history</h3>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
-  <ng-container matColumnDef="date">
-    <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
-    <td mat-cell *matCellDef="let element">{{ element.date | date }}</td>
-  </ng-container>
+<h4 class="table-title">Tanzania covid-19 history</h4>
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+      <td mat-cell *matCellDef="let element">{{ element.date | date }}</td>
+    </ng-container>
 
-  <ng-container matColumnDef="confirmed">
-    <th mat-header-cell *matHeaderCellDef>Confirmed</th>
-    <td mat-cell *matCellDef="let element">{{ element.confirmed }}</td>
-  </ng-container>
+    <ng-container matColumnDef="confirmed">
+      <th mat-header-cell *matHeaderCellDef>Confirmed</th>
+      <td mat-cell *matCellDef="let element">{{ element.confirmed }}</td>
+    </ng-container>
 
-  <ng-container matColumnDef="deaths">
-    <th mat-header-cell *matHeaderCellDef>Deaths</th>
-    <td mat-cell *matCellDef="let element">{{ element.deaths }}</td>
-  </ng-container>
+    <ng-container matColumnDef="deaths">
+      <th mat-header-cell *matHeaderCellDef>Deaths</th>
+      <td mat-cell *matCellDef="let element">{{ element.deaths }}</td>
+    </ng-container>
 
-  <ng-container matColumnDef="recovered">
-    <th mat-header-cell *matHeaderCellDef>Recovered</th>
-    <td mat-cell *matCellDef="let element">{{ element.recovered }}</td>
-  </ng-container>
+    <ng-container matColumnDef="recovered">
+      <th mat-header-cell *matHeaderCellDef>Recovered</th>
+      <td mat-cell *matCellDef="let element">{{ element.recovered }}</td>
+    </ng-container>
 
-  <ng-container matColumnDef="active">
-    <th mat-header-cell *matHeaderCellDef>Active</th>
-    <td mat-cell *matCellDef="let element">{{ element.active }}</td>
-  </ng-container>
+    <ng-container matColumnDef="active">
+      <th mat-header-cell *matHeaderCellDef>Active</th>
+      <td mat-cell *matCellDef="let element">{{ element.active }}</td>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+</div>
