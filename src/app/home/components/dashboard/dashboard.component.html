@@ -1,1 +1,107 @@
-<p>dashboard works!</p>
+<mat-toolbar>
+  <img
+    src="favicon.ico"
+    style="height: 5vh; width: auto; border-radius: 50%; margin-left: 1vw;"
+  />
+  &nbsp; Tanzania covid-19 dashboard</mat-toolbar
+>
+
+<div
+  class="dashboard-container"
+  *ngIf="(loadedWorldData$ | async) && (countryDataLoaded$ | async)"
+>
+  <div
+    class="quick-stats"
+    fxLayout="row wrap"
+    fxLayout.xs="column"
+    fxLayoutAlign="space-around center"
+    fxLayoutGap="25px"
+  >
+    <mat-card
+      class="world-data"
+      fxFlex="calc(33%-25px)"
+      fxFlex.sm="calc(50%-25px)"
+    >
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>World Statistics</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          <i class="fa fa-ambulance"></i> Confirmed cases -
+          {{ (worldData$ | async).totalConfirmed }}
+        </div>
+        <div>
+          <i class="fa fa-list-alt"></i> Deaths -
+          {{ (worldData$ | async).totalDeaths }}
+        </div>
+        <div>
+          <i class="fa fa-heartbeat"></i> Recovered -
+          {{ (worldData$ | async).totalRecovered }}
+        </div>
+        <div>
+          <i class="fa fa-stethoscope"></i> Active Cases -
+          {{
+            (worldData$ | async).totalConfirmed -
+              ((worldData$ | async).totalRecovered +
+                (worldData$ | async).totalDeaths)
+          }}
+        </div>
+        <div class="float-right">
+          <small>Last updated: {{ todaysDate | date }}</small>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card
+      class="country-data"
+      fxFlex="calc(33%-25px)"
+      fxFlex.sm="calc(50%-25px)"
+    >
+      <mat-card-header>
+        <mat-card-title>Tanzania Statistics</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div>
+          <i class="fa fa-ambulance"></i> Confirmed cases -
+          {{ (latestCountryData$ | async).confirmed }}
+        </div>
+        <div>
+          <i class="fa fa-list-alt"></i> Deaths -
+          {{ (latestCountryData$ | async).deaths }}
+        </div>
+        <div>
+          <i class="fa fa-heartbeat"></i> Recovered -
+          {{ (latestCountryData$ | async).recovered }}
+        </div>
+        <div>
+          <i class="fa fa-stethoscope"></i>
+          Active Cases -
+          {{ (latestCountryData$ | async).active }}
+        </div>
+
+        <div class="float-right">
+          <small
+            >Last updated: {{ (latestCountryData$ | async).date | date }}</small
+          >
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="country-analysis">
+    <app-country-data-charts
+      [countryData]="allCountryData$ | async"
+    ></app-country-data-charts>
+
+    <div class="float-right">
+      <button mat-raised-button (click)="openCountryHistory($event)">
+        View History
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-dashboard-loader
+  *ngIf="!((loadedWorldData$ | async) && (countryDataLoaded$ | async))"
+></app-dashboard-loader>

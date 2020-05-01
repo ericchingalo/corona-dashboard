@@ -1,0 +1,48 @@
+<div
+  class="quick-stats"
+  fxLayout="row wrap"
+  fxLayout.xs="column"
+  fxLayoutAlign="space-around center"
+  fxLayoutGap="25px"
+>
+  <div
+    style="padding: 10px;"
+    fxFlex="calc(33%-25px)"
+    fxFlex.sm="calc(50%-25px)"
+    class="stats-loader"
+    *ngFor="let item of [1, 2]"
+  >
+    <ngx-skeleton-loader
+      count="1"
+      [theme]="{
+        'border-radius': '5px',
+        height: '20vh',
+        'background-color': '#e0e0de',
+        border: '1px solid white'
+      }"
+    ></ngx-skeleton-loader>
+  </div>
+</div>
+
+<div style="padding: 10px; width: 90vw; margin: 0 auto;">
+  <ngx-skeleton-loader
+    count="1"
+    [theme]="{
+      'border-radius': '5px',
+      height: '45vh',
+      'background-color': '#e0e0de',
+      border: '1px solid white'
+    }"
+  ></ngx-skeleton-loader>
+</div>
+<div style="padding: 10px; width: 10vw;" class="float-right">
+  <ngx-skeleton-loader
+    count="1"
+    [theme]="{
+      'border-radius': '5px',
+      height: '5vh',
+      'background-color': '#e0e0de',
+      border: '1px solid white'
+    }"
+  ></ngx-skeleton-loader>
+</div>

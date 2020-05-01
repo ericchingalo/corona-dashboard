@@ -1,0 +1,9 @@
+.stats-loader {
+  width: 30vw;
+}
+
+@media only screen and (max-width: 960px) {
+  .stats-loader {
+    width: 90vw;
+  }
+}
