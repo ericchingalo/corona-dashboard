@@ -6,6 +6,23 @@
 .world-data {
   height: 27vh;
 }
+
+.country-analysis {
+  margin-top: 1vh;
+}
+
+.fa-ambulance {
+  color: rgb(55, 168, 248);
+}
+
+.fa-heartbeat {
+  color: rgb(24, 233, 24);
+}
+
+.fa-stethoscope {
+  color: rgb(192, 6, 6);
+}
+
 @media only screen and (max-width: 960px) {
   mat-card {
     width: 90vw;
