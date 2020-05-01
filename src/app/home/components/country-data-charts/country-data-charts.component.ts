@@ -15,11 +15,18 @@ export class CountryDataChartsComponent implements OnInit {
 
   ngOnInit() {
     this.countryData = sanitizeDataByDate(this.countryData);
-    this.getAreaChart();
+    this.getColumnChart();
   }
 
   getAreaChart() {
     this.chartService.generateAreaChart(
+      'highchart-container',
+      this.countryData
+    );
+  }
+
+  getColumnChart() {
+    this.chartService.generateColumnChart(
       'highchart-container',
       this.countryData
     );
