@@ -9,6 +9,5 @@ export function sanitizeDataByDate(data: CountryData[]): CountryData[] {
     return dataDate >= startDate;
   });
 
-  console.log(requiredData);
   return requiredData;
 }

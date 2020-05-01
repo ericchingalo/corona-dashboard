@@ -1,7 +1,7 @@
 <h3>Tanzania covid-19 history</h3>
-<table mat-table [dataSource]="countryData" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
   <ng-container matColumnDef="date">
-    <th mat-header-cell *matHeaderCellDef>Date</th>
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
     <td mat-cell *matCellDef="let element">{{ element.date | date }}</td>
   </ng-container>
 
