@@ -4,8 +4,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CountryDataTableComponent } from './components/country-data-table/country-data-table.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: 'home', component: DashboardComponent },
+  { path: '', component: DashboardComponent },
   { path: 'history', component: CountryDataTableComponent },
 ];
 

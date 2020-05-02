@@ -6,6 +6,7 @@ mat-toolbar {
   margin-bottom: 2vh;
   margin-top: 0;
   display: block;
+  width: 100%;
 }
 
 .quick-stats {
@@ -52,6 +53,10 @@ button {
 @media only screen and (max-width: 960px) {
   .quick-stats {
     display: inline-block;
+  }
+  .country-analysis {
+    width: 90vw;
+    margin: 0 5vh;
   }
   .quick-stats mat-card {
     display: block;
