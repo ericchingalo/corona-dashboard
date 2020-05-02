@@ -107,8 +107,6 @@ THE SOFTWARE.
 
 @angular/material/table
 
-@angular/material/toolbar
-
 @angular/material/tooltip
 
 @angular/platform-browser
