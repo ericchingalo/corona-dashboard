@@ -1,0 +1,100 @@
+{
+  "configVersion": 1,
+  "timestamp": 1588384528147,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/5-es2015.1c2d0724caddbce795e7.js",
+        "/5-es5.1c2d0724caddbce795e7.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main-es2015.7c24f523c15ded0627dd.js",
+        "/main-es5.7c24f523c15ded0627dd.js",
+        "/manifest.webmanifest",
+        "/polyfills-es2015.5b10b8fd823b6392f1fd.js",
+        "/polyfills-es5.3e8196928d184a6e5319.js",
+        "/runtime-es2015.f4acff1e6af6c6c418f3.js",
+        "/runtime-es5.f4acff1e6af6c6c418f3.js",
+        "/styles.a31fb4ecb70cf8970bda.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/icons/area.png",
+        "/assets/icons/column.png",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/icons/line.png",
+        "/fontawesome-webfont.674f50d287a8c48dc19b.eot",
+        "/fontawesome-webfont.912ec66d7572ff821749.svg",
+        "/fontawesome-webfont.af7ae505a9eed503f8b8.woff2",
+        "/fontawesome-webfont.b06871f281fee6b241d6.ttf",
+        "/fontawesome-webfont.fee66e712a8a08eef580.woff"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/5-es2015.1c2d0724caddbce795e7.js": "70fd57fe4797024e1b5389a707e879b9508f6e68",
+    "/5-es5.1c2d0724caddbce795e7.js": "5222f03635e57b591f78f4591e5eb04d9d5d44be",
+    "/assets/icons/area.png": "71b06ad53523d468a8644ef92b4c42ba4d3ce77f",
+    "/assets/icons/column.png": "e74bbf1ce9c66c9d8fc66aea08cb9fdb32545d1c",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/icons/line.png": "ec5523c143e533e60e9cc8f41fd086333e0fd342",
+    "/favicon.ico": "7caefa69b42e7fbe09c77239f6c30458f31433c6",
+    "/fontawesome-webfont.674f50d287a8c48dc19b.eot": "d980c2ce873dc43af460d4d572d441304499f400",
+    "/fontawesome-webfont.912ec66d7572ff821749.svg": "98a8aa5cf7d62c2eff5f07ede8d844b874ef06ed",
+    "/fontawesome-webfont.af7ae505a9eed503f8b8.woff2": "d6f48cba7d076fb6f2fd6ba993a75b9dc1ecbf0c",
+    "/fontawesome-webfont.b06871f281fee6b241d6.ttf": "13b1eab65a983c7a73bc7997c479d66943f7c6cb",
+    "/fontawesome-webfont.fee66e712a8a08eef580.woff": "28b782240b3e76db824e12c02754a9731a167527",
+    "/index.html": "7c5f3fc88940eea1dfd875b52606f69a2086507e",
+    "/main-es2015.7c24f523c15ded0627dd.js": "7dd8602fe2f98634a278d8b1c2115980bbeb590c",
+    "/main-es5.7c24f523c15ded0627dd.js": "bd4a07ebbd7b09d3cc543421d4175b5cc0a7006e",
+    "/manifest.webmanifest": "1bc7a7c4eabbdad65f6d84f8bd68996e59fdb050",
+    "/polyfills-es2015.5b10b8fd823b6392f1fd.js": "9abfe15f17820a646e3d51c420908d9f8f7b69b8",
+    "/polyfills-es5.3e8196928d184a6e5319.js": "a09a6044f37c73c715665663d2dcb61f666618a1",
+    "/runtime-es2015.f4acff1e6af6c6c418f3.js": "cf49ce76b6162d35c82ef646bdd81bbc670e7f6d",
+    "/runtime-es5.f4acff1e6af6c6c418f3.js": "801cddafb608c38b988f5dd5939481ee6a86bbaa",
+    "/styles.a31fb4ecb70cf8970bda.css": "084a19cb6fdcac022a2fb156f0d45d3be75ebf01"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
