@@ -1,7 +1,7 @@
 <mat-toolbar>
   <img
     src="favicon.ico"
-    style="height: 5vh; width: auto; border-radius: 50%; margin-left: 1vw;"
+    style="height: 5vh; width: 100vw; border-radius: 50%; margin-left: 1vw;"
   />
   &nbsp; Tanzania covid-19 dashboard</mat-toolbar
 >
@@ -10,18 +10,8 @@
   class="dashboard-container"
   *ngIf="(loadedWorldData$ | async) && (countryDataLoaded$ | async)"
 >
-  <div
-    class="quick-stats"
-    fxLayout="row wrap"
-    fxLayout.xs="column"
-    fxLayoutAlign="space-around center"
-    fxLayoutGap="25px"
-  >
-    <mat-card
-      class="world-data"
-      fxFlex="calc(33%-25px)"
-      fxFlex.sm="calc(50%-25px)"
-    >
+  <div class="quick-stats">
+    <mat-card>
       <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>World Statistics</mat-card-title>
@@ -53,11 +43,7 @@
       </mat-card-content>
     </mat-card>
 
-    <mat-card
-      class="country-data"
-      fxFlex="calc(33%-25px)"
-      fxFlex.sm="calc(50%-25px)"
-    >
+    <mat-card>
       <mat-card-header>
         <mat-card-title>Tanzania Statistics</mat-card-title>
       </mat-card-header>

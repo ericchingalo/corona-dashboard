@@ -8,6 +8,17 @@ mat-toolbar {
   display: block;
 }
 
+.quick-stats {
+  justify-content: space-around;
+  display: flex;
+  column-gap: 2vw;
+}
+
+.quick-stats mat-card {
+  flex: 1;
+  margin: 4px;
+}
+
 .country-data,
 .world-data {
   height: 27vh;
@@ -35,12 +46,23 @@ small {
 }
 
 button {
-  margin: 1vw 1vh;
+  margin: 1vw 0;
 }
 
 @media only screen and (max-width: 960px) {
-  mat-card {
-    width: 90vw;
-    height: auto;
+  .quick-stats {
+    display: inline-block;
   }
+  .quick-stats mat-card {
+    display: block;
+    width: 90vw;
+    height: 27vh;
+    margin: 0 5vh;
+    align-self: center;
+    margin-bottom: 1vh;
+  }
+}
+
+.quick-stats mat-card {
+  background: #f5f5f5;
 }

@@ -7,7 +7,6 @@ import { environment } from '../environments/environment';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,16 +21,15 @@ import { MaterialModule } from './core/material/material.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FlexLayoutModule,
     MaterialModule,
     HttpClientModule,
     NgxSkeletonLoaderModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot(effects),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-    }),
+    // ServiceWorkerModule.register('ngsw-worker.js', {
+    //   enabled: environment.production,
+    // }),
   ],
   providers: [],
   bootstrap: [AppComponent],

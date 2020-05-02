@@ -1,9 +1,24 @@
-.stats-loader {
-  width: 30vw;
+.quick-stats {
+  justify-content: space-around;
+  display: flex;
+  column-gap: 2vw;
+}
+
+.quick-stats .stats-loader {
+  flex: 1;
+  margin: 4px;
 }
 
 @media only screen and (max-width: 960px) {
-  .stats-loader {
+  .quick-stats {
+    display: inline-block;
+  }
+  .quick-stats .stats-loader {
+    display: block;
     width: 90vw;
+    height: 27vh;
+    margin: 0 5vh;
+    align-self: center;
+    margin-bottom: 1vh;
   }
 }

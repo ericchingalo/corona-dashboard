@@ -1,17 +1,5 @@
-<div
-  class="quick-stats"
-  fxLayout="row wrap"
-  fxLayout.xs="column"
-  fxLayoutAlign="space-around center"
-  fxLayoutGap="25px"
->
-  <div
-    style="padding: 10px;"
-    fxFlex="calc(33%-25px)"
-    fxFlex.sm="calc(50%-25px)"
-    class="stats-loader"
-    *ngFor="let item of [1, 2]"
-  >
+<div class="quick-stats">
+  <div class="stats-loader" *ngFor="let item of [1, 2]">
     <ngx-skeleton-loader
       count="1"
       [theme]="{

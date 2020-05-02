@@ -1,20 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  StyleUtils,
-  StylesheetMap,
-  MediaMarshaller,
-  ɵMatchMedia,
-  BreakPointRegistry,
-  PrintHook,
-  LayoutStyleBuilder,
-  FlexStyleBuilder,
-  ShowHideStyleBuilder,
-  FlexOrderStyleBuilder,
-  FlexLayoutModule,
-  LayoutGapStyleBuilder,
-  LayoutAlignStyleBuilder,
-} from '@angular/flex-layout';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { components } from './components';
@@ -27,22 +12,8 @@ import { HomeRoutingModule } from './home.routes';
     CommonModule,
     MaterialModule,
     HomeRoutingModule,
-    FlexLayoutModule,
     NgxSkeletonLoaderModule,
   ],
-  providers: [
-    StyleUtils,
-    StylesheetMap,
-    MediaMarshaller,
-    ɵMatchMedia,
-    BreakPointRegistry,
-    PrintHook,
-    LayoutStyleBuilder,
-    FlexStyleBuilder,
-    ShowHideStyleBuilder,
-    FlexOrderStyleBuilder,
-    LayoutGapStyleBuilder,
-    LayoutAlignStyleBuilder,
-  ],
+  providers: [],
 })
 export class HomeModule {}
